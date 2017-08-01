@@ -1,7 +1,5 @@
 import java.util.regex.Pattern;
 
-
-
 //edited 7-26-17
 public class WebCrawler{
 		
@@ -103,6 +101,31 @@ public class WebCrawler{
 	 * get for opion tag
 	 */
 	public static String getOptionText() 
+	{
+		return null;
+	}
+	/*
+	 * 
+	 */
+	public static String getAText()
+	{
+		return null;
+	}
+	/*
+	 * 
+	 */
+	public static String getTdText()
+	{
+		return null;
+	}
+	/*
+	 * 
+	 */
+	public static String getThText()
+	{
+		return null;
+	}
+	public static String getFontTag()
 	{
 		return null;
 	}
