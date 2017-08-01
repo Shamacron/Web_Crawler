@@ -1,3 +1,4 @@
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 //edited 7-26-17
@@ -64,7 +65,10 @@ public class WebCrawler{
 	 */
 	public static String getBodyText()
 	{
-		return null;
+		String text = "";
+		
+		
+		return text;
 		
 	}
 	/*
@@ -107,9 +111,22 @@ public class WebCrawler{
 	/*
 	 * 
 	 */
-	public static String getAText()
+	public static String getAtext(String htl)
 	{
-		return null;
+		String html = htl;
+		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
+		Matcher m = p.matcher(html);
+		return m.group(3);
+	}
+	/*
+	 *returns the link inside of the a tag href 
+	 */
+	public static String getALink(String htl)
+	{
+		String html = htl;
+		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
+		Matcher m = p.matcher(html);
+		return m.group(1);
 	}
 	/*
 	 * 
@@ -125,6 +142,9 @@ public class WebCrawler{
 	{
 		return null;
 	}
+	/*
+	 * 
+	 */
 	public static String getFontTag()
 	{
 		return null;
