@@ -65,6 +65,7 @@ public class WebCrawler{
 	 */
 	public static String getBodyText()
 	{
+		
 		String text = "";
 		
 		
@@ -74,9 +75,12 @@ public class WebCrawler{
 	/*
 	 * uses regex to retun the text inside of the <p> tag into an array of strings for diffrent p tags
 	 */
-	public static String getPText()
+	public static String getPText(String hml)
 	{
-		return null;
+		String html = hml;
+		Pattern p = Pattern.compile("<p (.*?)>(.*?)<//p>");
+		Matcher m = p.matcher(html);
+		return m.group(1);
 	}
 	/*
 	 * uses regex to return the text inside of the <div tag>
@@ -89,17 +93,23 @@ public class WebCrawler{
 	/*
 	 * get for li tag
 	 */
-	public static String getLiText()
+	public static String getLiText(String htl)
 	{
-		return null;
+		String html = htl;
+		Pattern p = Pattern.compile("<li (.*?)>(.*?)<\\/li>");
+		Matcher m = p.matcher(html);
+		return m.group(1);
 		
 	}
 	/*
 	 * get for label tag
 	 */
-	public static String getLabelText() 
+	public static String getLabelText(String htl) 
 	{
-		return null;
+		String html = htl;
+		Pattern p = Pattern.compile("<label (.*?)>(.*?)<\\/label>");
+		Matcher m = p.matcher(html);
+		return m.group(1);
 	}
 	/*
 	 * get for opion tag
@@ -116,7 +126,7 @@ public class WebCrawler{
 		String html = htl;
 		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
 		Matcher m = p.matcher(html);
-		return m.group(3);
+		return m.group(2);
 	}
 	/*
 	 *returns the link inside of the a tag href 
@@ -126,7 +136,7 @@ public class WebCrawler{
 		String html = htl;
 		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
 		Matcher m = p.matcher(html);
-		return m.group(1);
+		return m.group(0);
 	}
 	/*
 	 * 
@@ -138,15 +148,21 @@ public class WebCrawler{
 	/*
 	 * 
 	 */
-	public static String getThText()
+	public static String getThText(String htl)
 	{
-		return null;
+		String html = htl;
+		Pattern p = Pattern.compile("<th (.*?)>(.*?)<\\/th>");
+		Matcher m = p.matcher(html);
+		return m.group(1);
 	}
 	/*
 	 * 
 	 */
-	public static String getFontTag()
+	public static String getFontTag(String htl)
 	{
-		return null;
+		String html = htl;
+		Pattern p = Pattern.compile("<font (.*?)>(.*?)<\\/font>");
+		Matcher m = p.matcher(html);
+		return m.group(1);
 	}
 }
