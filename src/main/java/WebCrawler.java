@@ -2,14 +2,13 @@
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.net.URL;
 import java.util.HashMap;
-
-
 
 //edited 7-26-17
 public class WebCrawler{
@@ -50,6 +49,17 @@ public class WebCrawler{
 	}
 
 	/*
+	 * uses regex to get the text inside the body of the html
+	 */
+	public static String getBodyText()
+	{
+		String text = "";
+		
+		
+		return text;
+		
+	}
+	/*
 	 * uses regex to retun the text inside of the <p> tag into an array of strings for diffrent p tags
 	 */
 	public static String getPText()
@@ -78,6 +88,47 @@ public class WebCrawler{
 	 * get for opion tag
 	 */
 	public static String getOptionText()
+	{
+		return null;
+	}
+	/*
+	 * 
+	 */
+	public static String getAtext(String htl)
+	{
+		String html = htl;
+		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
+		Matcher m = p.matcher(html);
+		return m.group(3);
+	}
+	/*
+	 *returns the link inside of the a tag href 
+	 */
+	public static String getALink(String htl)
+	{
+		String html = htl;
+		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
+		Matcher m = p.matcher(html);
+		return m.group(1);
+	}
+	/*
+	 * 
+	 */
+	public static String getTdText()
+	{
+		return null;
+	}
+	/*
+	 * 
+	 */
+	public static String getThText()
+	{
+		return null;
+	}
+	/*
+	 * 
+	 */
+	public static String getFontTag()
 	{
 		return null;
 	}
