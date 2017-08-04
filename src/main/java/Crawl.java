@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Crawl {
@@ -46,6 +47,17 @@ public class Crawl {
 			return null;
 		}
 		private List<String> getWordsFromPage(String html){
-			return null;
+			FoundWord f = new FoundWord();
+			List<String> words = new ArrayList<>();
+			words.add(f.getBodyText(html));
+			words.add(f.getAtext(html));
+			words.add(f.getFontTag(html));
+			words.add(f.getLabelText(html));
+			words.add(f.getLiText(html));
+			words.add(f.getOptionText(html));
+			words.add(f.getPText(html));
+			words.add(f.getTdText(html));
+			words.add(f.getThText(html));
+			return words;
 		}
 }

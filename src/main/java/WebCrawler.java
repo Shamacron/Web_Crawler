@@ -48,114 +48,9 @@ public class WebCrawler{
 
 	}
 
-	/*
-	 * uses regex to retun the text inside of the <p> tag into an array of strings for diffrent p tags
-	 */
-	public static String getPText(String hml)
-	{
-		String html = hml;
-		Pattern p = Pattern.compile("<p (.*?)>(.*?)<//p>");
-		Matcher m = p.matcher(html);
-		if(m.find()) {
-            return m.group(2);
-        }
-        return null;
-	}
 
-	/*
-	 * get for li tag
-	 */
-	public static String getLiText(String htl)
-	{
-		String html = htl;
-		Pattern p = Pattern.compile("<li (.*?)>(.*?)<\\/li>");
-		Matcher m = p.matcher(html);
-		if(m.find()) {
-            return m.group(2);
-        }
-		
-	}
 
-	/*
-	 * get for label tag
-	 */
-	public static String getLabelText(String htl) 
-	{
-		String html = htl;
-		Pattern p = Pattern.compile("<label (.*?)>(.*?)<\\/label>");
-		Matcher m = p.matcher(html);
-		if(m.find()) {
-            return m.group(2);
-        }
-	    return null;
-	}
 
-	/*
-	 * get for opion tag
-	 */
-	public static String getOptionText()
-	{
-		return null;
-	}
-	/*
-	 * 
-	 */
-	public static String getAtext(String htl)
-	{
-		String html = htl;
-		Pattern p = Pattern.compile("<a href ?=\"(.*?)\" ?(.*?)?>(.*?)<\\/a>");
-		Matcher m = p.matcher(html);
-		if(m.find()){
-            return m.group(3);
-        }
-		return null;
-	}
-	/*
-	 *returns the link inside of the a tag href 
-	 */
-	public static String getALink(String htl)
-	{
-		String html = htl;
-		Pattern p = Pattern.compile("<a href ?=\"(.*?)\" ?(.*?)?>(.*?)<\\/a>");
-		Matcher m = p.matcher(html);
-		if(m.find()) {
-            return m.group(1);
-        }
-        return null;
-    }
-	/*
-	 * 
-	 */
-	public static String getTdText()
-	{
-		return null;
-	}
-	/*
-	 * 
-	 */
-	public static String getThText(String htl)
-	{
-		String html = htl;
-		Pattern p = Pattern.compile("<th (.*?)>(.*?)<\\/th>");
-		Matcher m = p.matcher(html);
-		if(m.find()){
-            return m.group(2);
-        }
-		return null;
-	}
-	/*
-	 * 
-	 */
-	public static String getFontTag(String htl)
-	{
-		String html = htl;
-		Pattern p = Pattern.compile("<font (.*?)>(.*?)<\\/font>");
-		Matcher m = p.matcher(html);
-		if(m.find()){
-            return m.group(2);
-        }
-		return null;
-	}
 
     /*
     What classes do we need
@@ -205,15 +100,6 @@ public class WebCrawler{
      * finds webpages that are exteinos of the local page
      */
     public static String[] getInternalWebPages()
-    {
-        return null;
-
-    }
-
-    /*
-     * uses regex to get the text inside the body of the html
-     */
-    public static String getBodyText()
     {
         return null;
 
