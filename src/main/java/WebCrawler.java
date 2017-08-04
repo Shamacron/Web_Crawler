@@ -166,8 +166,18 @@ public class WebCrawler{
     }
 
 
+	public boolean checkIfInternal(String currentDomain, String pastDomain)
+	{
+		if("http:\\/\\/().()" == "")
+		{
 
-    /*
+		}
+
+		return false;
+	}
+
+
+	/*
      * finds webpages that are exteinos of the local page
      */
     public static String[] getInternalWebPages()
