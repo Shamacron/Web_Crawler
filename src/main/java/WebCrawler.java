@@ -103,7 +103,7 @@ public class WebCrawler{
 	public static String getAtext(String htl)
 	{
 		String html = htl;
-		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
+		Pattern p = Pattern.compile("<a href ?=\"(.*?)\" ?(.*?)?>(.*?)<\\/a>");
 		Matcher m = p.matcher(html);
 		if(m.find()){
             return m.group(3);
@@ -116,7 +116,7 @@ public class WebCrawler{
 	public static String getALink(String htl)
 	{
 		String html = htl;
-		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
+		Pattern p = Pattern.compile("<a href ?=\"(.*?)\" ?(.*?)?>(.*?)<\\/a>");
 		Matcher m = p.matcher(html);
 		if(m.find()) {
             return m.group(1);
