@@ -49,18 +49,6 @@ public class WebCrawler{
 	}
 
 	/*
-	 * uses regex to get the text inside the body of the html
-	 */
-	public static String getBodyText()
-	{
-		
-		String text = "";
-		
-		
-		return text;
-		
-	}
-	/*
 	 * uses regex to retun the text inside of the <p> tag into an array of strings for diffrent p tags
 	 */
 	public static String getPText(String hml)
@@ -68,7 +56,10 @@ public class WebCrawler{
 		String html = hml;
 		Pattern p = Pattern.compile("<p (.*?)>(.*?)<//p>");
 		Matcher m = p.matcher(html);
-		return m.group(1);
+		if(m.find()) {
+            return m.group(2);
+        }
+        return null;
 	}
 
 	/*
@@ -79,7 +70,9 @@ public class WebCrawler{
 		String html = htl;
 		Pattern p = Pattern.compile("<li (.*?)>(.*?)<\\/li>");
 		Matcher m = p.matcher(html);
-		return m.group(1);
+		if(m.find()) {
+            return m.group(2);
+        }
 		
 	}
 
@@ -91,7 +84,10 @@ public class WebCrawler{
 		String html = htl;
 		Pattern p = Pattern.compile("<label (.*?)>(.*?)<\\/label>");
 		Matcher m = p.matcher(html);
-		return m.group(1);
+		if(m.find()) {
+            return m.group(2);
+        }
+	    return null;
 	}
 
 	/*
@@ -109,7 +105,10 @@ public class WebCrawler{
 		String html = htl;
 		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
 		Matcher m = p.matcher(html);
-		return m.group(2);
+		if(m.find()){
+            return m.group(3);
+        }
+		return null;
 	}
 	/*
 	 *returns the link inside of the a tag href 
@@ -119,8 +118,11 @@ public class WebCrawler{
 		String html = htl;
 		Pattern p = Pattern.compile("<a href ?='(.*?)' (.*?)>(.*?)<\\/a>");
 		Matcher m = p.matcher(html);
-		return m.group(0);
-	}
+		if(m.find()) {
+            return m.group(1);
+        }
+        return null;
+    }
 	/*
 	 * 
 	 */
@@ -136,7 +138,10 @@ public class WebCrawler{
 		String html = htl;
 		Pattern p = Pattern.compile("<th (.*?)>(.*?)<\\/th>");
 		Matcher m = p.matcher(html);
-		return m.group(1);
+		if(m.find()){
+            return m.group(2);
+        }
+		return null;
 	}
 	/*
 	 * 
@@ -146,7 +151,10 @@ public class WebCrawler{
 		String html = htl;
 		Pattern p = Pattern.compile("<font (.*?)>(.*?)<\\/font>");
 		Matcher m = p.matcher(html);
-		return m.group(1);
+		if(m.find()){
+            return m.group(2);
+        }
+		return null;
 	}
 
     /*
